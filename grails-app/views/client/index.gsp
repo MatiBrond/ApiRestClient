@@ -57,8 +57,8 @@
 %{--        <div class="col-md-4 mb-3 md-form">
             <label for="orden">Orden</label>
 
-            <g:select id="orden" optionKey="id" optionValue="name"
-                      name="orden" action="" onChange="" from=""
+            <g:select id="sort_by" optionKey="id" optionValue="name"
+                      name="sort_by" action="" onChange="" from=""
                       noSelection="['null':'Seleccione criterio de orden']">
             </g:select>
 
@@ -108,12 +108,16 @@
             var data = $("form").serializeArray();
             console.log(data);
 
-            var URL="/client/getP/"
+            var dataClean = data.filter(Boolean);
+            console.log(dataClean)
+
+            var URL= "http://localhost:8070/agencies"
 
            $.ajax({
                 url:URL,
                 method: "GET",
-                data: data,
+                data: dataClean,
+                dataType:"jsonp",
                 success: function(response){
 
                     console.log(response)

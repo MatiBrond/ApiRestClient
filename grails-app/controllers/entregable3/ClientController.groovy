@@ -21,9 +21,10 @@ class ClientController {
 
 
     def getP(){
-        def url = new URL("localhost:8070//$params.site_id/payment_methods/agencies/")
+        def url = new URL("localhost:8070/agencies/$params ")
         def connection = (HttpURLConnection) url.openConnection()
         connection.setRequestMethod("GET")
+        connection.setRequestProperty("Header")
         connection.setRequestProperty("Accept", "application/json")
         connection.setRequestProperty("User-Agent", "Mozilla/5.0")
         JsonSlurper json = new JsonSlurper()
