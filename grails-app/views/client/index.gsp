@@ -4,7 +4,6 @@
   Date: 2019-04-26
   Time: 09:32
 --%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -16,26 +15,6 @@
 </head>
 
 <body>
-%{--
-<g:select optionKey="id" optionValue="name"
-          name="sites" from="${result}"
-          action="getP" onchange="callAjax(this.value);"
-          noSelection="['null':'Seleccione país']">
-</g:select>
-
-
-<g:select id="met" optionKey="id" optionValue="name"
-          name="getP" from="${re}"
-          action=""
-          noSelection="['null':'Seleccione método de pago']">
-</g:select>
---}%
-
-%{--<g:select id="orden" optionKey="id" optionValue="name"
-           name="orden" action="" onChange="" from=""
-          noSelection="['null':'Seleccione criterio de orden']">
-</g:select>--}%
-
 
 <form class="needs-validation" name="form" novalidate>
     <div class="form-row">
@@ -131,7 +110,7 @@
 
             var URL="/client/getP/"
 
-   /*         $.ajax({
+           $.ajax({
                 url:URL,
                 method: "GET",
                 data: data,
@@ -140,7 +119,7 @@
                     console.log(response)
 
                 }
-            })*/;}
+            });}
 
 
 /*    (function() {

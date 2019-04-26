@@ -21,7 +21,7 @@ class ClientController {
 
 
     def getP(){
-        def url = new URL("https://api.mercadolibre.com/sites/$params.site_id/payment_methods/")
+        def url = new URL("localhost:8070//$params.site_id/payment_methods/agencies/")
         def connection = (HttpURLConnection) url.openConnection()
         connection.setRequestMethod("GET")
         connection.setRequestProperty("Accept", "application/json")
